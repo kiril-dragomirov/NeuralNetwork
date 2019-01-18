@@ -26,8 +26,8 @@ class ColorService
             1 => 'blue'
         ],
         ColorService::RG => [
-            0 => 'red',
-            1 => 'green'
+            0 => 'green',
+            1 => 'red'
         ],
         ColorService::GB => [
             0 => 'green',
