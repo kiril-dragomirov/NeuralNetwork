@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+    <title>Невронна мрежа за разпознаване на доминантен цвят</title>
+</head>
+<body>
+<header>
+    <h1>Програма за разпознаване на доминантен цвят от палитрата - RGB</h1>
+</header>
+<div id="information">
+    <h3>Целта на приложението да определи доминиращия цвят избран от палитрата. Приложението <br>
+        може да определя измежду 2 цвята. В сегашната версия потребителя може да избира да
+        от следните опции : <br>
+        <span style="color: red">Червено</span> : <span style="color: blue">Синьо</span> /RB/<br>
+        <span style="color: red">Червено</span> : <span style="color: green">Зелено</span> /RG/<br>
+        <span style="color: green">Зелено</span> : <span style="color: blue">Синьо</span> /GB/
+    </h3>
+    <form method="post" action="index.php?action=decideWhichColor&target=Color">
+        <select name="colorSelector" style="width: 20%">
+            <option value="0">Choose Color</option>
+            <option value="1">RB</option>
+            <option value="2">RG</option>
+            <option value="3">GB</option>
+        </select> <br>
+
+        Цвят : <input type="color" id="head" name="head"> <br>
+
+        <input type="submit" value="Изчисли">
+        <?php
+        if (!empty($params['success'])) { ?>
+            <div id="result">
+                <p><?= $params['success'] ?></p>
+            </div>
+        <?php }
+        ?>
+    </form>
+
+</div>
+<footer>
+    <h3>By Kiril Dragomirov</h3>
+</footer>
+
+</body>
+</html>
